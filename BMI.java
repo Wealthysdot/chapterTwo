@@ -4,11 +4,9 @@ import java.util.Scanner;
 
 public class BMI{
     public static void main(String []args){
-
-
         double weight;
         double height;
-        double BMI;
+        double bodyMassIndex;
 
         Scanner input = new Scanner(System.in);
 
@@ -18,22 +16,22 @@ public class BMI{
         System.out.println ("Enter height in meters");
         height = input.nextDouble();
 
-        BMI = weight / (height * height);
-        System.out.printf("BMI is %.2f %n", BMI);
+        bodyMassIndex = weight / (height * height);
+        System.out.printf("bodyMassIndex is %.2f %n", bodyMassIndex);
 
-        if (BMI < 18.5) {
+        if (bodyMassIndex < 18.5) {
             System.out.println ("You are Underweight");
         }
 
-        if (BMI >= 18.5 && BMI <= 24.9) {
+        if (bodyMassIndex >= 18.5 && bodyMassIndex <= 24.9) {
             System.out.println ("You are Normal");
         }
 
-        if (BMI > 25 && BMI <= 29.9) {
+        if (bodyMassIndex > 25 && bodyMassIndex <= 29.9) {
             System.out.println ("You are Overweight");
         }
 
-        if (BMI >= 30) {
+        if (bodyMassIndex >= 30) {
             System.out.println ("You are Obese");
         }
 

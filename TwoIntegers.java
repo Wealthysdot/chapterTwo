@@ -10,6 +10,7 @@ public class TwoIntegers {
         int diff;
         int prod;
         int quo;
+
         Scanner input = new Scanner(System.in);
 
 
@@ -18,6 +19,7 @@ public class TwoIntegers {
 
         System.out.println("Enter second integer");
         num2 = input.nextInt();
+
 
 
         sum = num1 + num2;

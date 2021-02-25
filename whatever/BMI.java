@@ -69,7 +69,7 @@ public class BMI {
                 }
                 else
                     if(BMIValue > 30){
-                        message = "Your BMI is " + BMIValue + "You RE Obese";
+                        message = "Your BMI is " + BMIValue + "You are Obese";
                     }
 
                     return message;
@@ -92,25 +92,3 @@ public class BMI {
 }
 
 
-//    to check for negative number
-//    public void setDigit(int digit) {
-//        if(digit < 0){
-//            isNegativeValueEntered = true;
-//        }
-//        else {
-//            this.digit = digit;
-//        }
-//        }
-////    to check for negative
-//    public boolean isNegativeValueEntered() {
-//        return isNegativeValueEntered;
-//    }
-//
-//    public String getInputErrorMessage() {
-//        String messageToReturn = "";
-//        if (isNegativeValueEntered == true){
-//            messageToReturn = "Please enter a positive number";
-//        }
-//        return messageToReturn;
-//
-//    }

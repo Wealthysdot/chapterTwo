@@ -2,9 +2,10 @@ package whatever;
 
 import java.util.Scanner;
 
+
 public class BMIApp {
     public static void main(String[] args) {
-        BMI newBMI = new BMI(0.0,0.0, 0);
+        whatever.BMI newBMI = new whatever.BMI(0.0,0.0, 0);
 
         Scanner input = new Scanner(System.in);
 

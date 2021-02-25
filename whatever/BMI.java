@@ -1,94 +1,40 @@
-package whatever;
+package chapterTwo.whatever;
 
-public class BMI {
-    private double weight;
-    private double height;
-    private double BMIValue;
-    private boolean isNegativeValueEntered;
+import java.util.Scanner;
 
-    public BMI(double weight, double height, double BMIValue) {
-        this.weight = weight;
-        this.height = height;
-        this.BMIValue = BMIValue;
-    }
+public class BMI{
+    public static void main(String []args){
+        double weight;
+        double height;
+        double bodyMassIndex;
 
-    public double getWeight() {
-//        System.out.println("Enter weight in Kilogram:");
-        return weight;
-    }
+        Scanner input = new Scanner(System.in);
 
-    public double getHeight() {
-        return height;
-    }
+        System.out.println ("Enter Weight in Kilograms");
+        weight = input.nextDouble();
 
-    public void setWeight(double weight) {
-        if(weight < 0){
-            isNegativeValueEntered = true;
-        }
-        else{
-            this.weight= weight;
-            isNegativeValueEntered = false;
+        System.out.println ("Enter height in meters");
+        height = input.nextDouble();
+
+        bodyMassIndex = weight / (height * height);
+        System.out.printf("bodyMassIndex is %.2f %n", bodyMassIndex);
+
+        if (bodyMassIndex < 18.5) {
+            System.out.println ("You are Underweight");
         }
 
-    }
-
-    public void setHeight(double height) {
-        if (height < 0){
-            isNegativeValueEntered = true;
+        if (bodyMassIndex >= 18.5 && bodyMassIndex <= 24.9) {
+            System.out.println ("You are Normal");
         }
-        else {
-        this.height = height;
-            isNegativeValueEntered = false;
 
+        if (bodyMassIndex > 25 && bodyMassIndex <= 29.9) {
+            System.out.println ("You are Overweight");
         }
-    }
 
-    public double calculatingBMI() {
-      double BMIValue =  getWeight() / (getHeight() * getHeight());
-      this.BMIValue = BMIValue;
-      return BMIValue;
-
-    }
-
-    public String checkBMIValue() {
-        String message = " ";
-
-        String bmiString = String.format("%.2f", BMIValue);
-        BMIValue = Double.parseDouble(bmiString);
-
-        if (BMIValue < 18.5 ){
-            message = "Your BMI is " + BMIValue + "You are underweight";
+        if (bodyMassIndex >= 30) {
+            System.out.println ("You are Obese");
         }
-        else
-            if (BMIValue > 18.5 && BMIValue < 25){
-                message = "Your BMI is " + BMIValue + "You are normal";
-            }
-            else
-                if(BMIValue > 25 && BMIValue < 30){
-                    message = "Your BMI is" +" "+ BMIValue +" "+ "You are Overweight";
-                }
-                else
-                    if(BMIValue > 30){
-                        message = "Your BMI is " + BMIValue + "You are Obese";
-                    }
-
-                    return message;
-
-    }
 
 
-
-    public boolean isNegativeValueEntered() {
-        return isNegativeValueEntered;
-    }
-
-    public String getInputErrorMessage() {
-        String messageToReturn = "";
-        if (isNegativeValueEntered == true){
-            messageToReturn = "Please enter a positive number";
-        }
-        return messageToReturn;
     }
 }
-
-
